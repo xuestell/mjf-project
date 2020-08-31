@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let s1= {
+        "sid": 1,
+        "stype": "1",
+        "sip": "10.134.103.101",
+        "sapauthor": "1",
+        "sapplicationdate": "2020-06-16T16:00:00.000+00:00",
+        "sinstalldate": "2020-06-16T16:00:00.000+00:00",
+        "smodifydate": "2020-06-16T16:00:00.000+00:00",
+        "sstatus": "1",
+        "sremark": "",
+        "server_application": null,
+        "server_status": null,
+        "server_type": null
+    };
+    let s2=[{prop:'sid',label:'sid'}];
+     let obj=Object.keys(s1);
+     //得到对象中的每一个键
+     console.log(obj);//(12) ["sid", "stype", "sip", "sapauthor", "sapplicationdate", "sinstalldate", "smodifydate", "sstatus", "sremark", "server_application", "server_status", "server_type"]
+     obj.forEach((item)=>{
+         console.log(item);
+         s2.push({prop:item,label:item});
+     })
+     console.log(s2);
+     //
+    </script>
+    
+</body>
+</html>

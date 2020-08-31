@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多行多列换行两边对齐，换行后左对齐</title>
+	</head>
+	<style type="text/css">
+		li {
+			list-style: none;
+		}
+
+		.List {
+			width: 100%;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: 10px;
+		}
+		.List:after{
+			content: "";
+			flex: auto;
+		}
+
+		.item {
+			/* 宽度是固定好的 */
+			width: 220px;
+			height: 60px;
+			background-color: azure;
+			margin-bottom: 10px;
+			border: 1px solid red;
+			/*这个数值需要自己去调*/
+			margin-right: 17px;
+		}
+		.item:nth-child(5n){
+			/* 尽量让item在list中居中，两边都没有margin */
+			margin-right: 0;
+		}
+		
+	</style>
+	<body>
+		<div id="" style="width: 1200px;margin: auto;background-color: #cccccc;height: 500px;">
+			<ul class="List">
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				
+			</ul>
+		</div>
+
+	</body>
+</html>
+
