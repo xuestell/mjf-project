@@ -21,7 +21,7 @@
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
+        msg: 'hello,mjf',
         //表头数据
         columns:[],
         //数据源
