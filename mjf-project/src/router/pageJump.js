@@ -1,5 +1,5 @@
 //First为主页面
-const First = ()=>import('@/views/components/First.vue')
+const First = ()=>import('@/views/components/test/First.vue')
 const A = () =>import('@/components/PageJump/A.vue')
 const B = () =>import('@/components/PageJump/B.vue')
 const A1 = () =>import('@/components/PageJump/A1.vue')

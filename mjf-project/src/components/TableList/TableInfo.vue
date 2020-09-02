@@ -7,13 +7,19 @@
     style="width: 100%">
     <el-table-column v-for="col in columns" :prop="col.prop" :label="col.label" :key="col.prop">
     </el-table-column>
+    <el-table-column fixed="right" label="操作" width="100">
+      <template slot-scope="scope">
+        <el-button type="text" size="small">编辑</el-button>
+         <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
+      </template>
+    </el-table-column>
   </el-table>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ElFilterTable',
+  name: 'TableInfo',
   props:{
     //表头数据
     columns:{
@@ -47,6 +53,12 @@ export default {
   data () {
     return {
     }
+  },
+  methods:{
+    handleClick(obj){
+
+    }
+
   }
 }
 </script>

@@ -1,4 +1,4 @@
-const MyFamily=()=>import('@/views/components/MyFamily.vue')
+const MyFamily=()=>import('@/views/components/test/MyFamily.vue')
 const LeftNav=()=>import('@/components/MyFamily/Left.vue')
 export default [
     {

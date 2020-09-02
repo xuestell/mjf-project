@@ -1,18 +1,14 @@
 <template>
-  <page-factory>
-    {{msg}}
     <login :ruleForm="ruleForm" :rules="rules" @submit="submit" @errHandle="errHandle"></login>
-  </page-factory>
 </template>
 
 <script>
   export default {
-    name: 'InfoTable',
+    name: 'NormalLogin',
     components: {
     },
     data(){
       return {
-        msg:'嘎嘎',
         //表单数据对象
         ruleForm:{
           username:'',

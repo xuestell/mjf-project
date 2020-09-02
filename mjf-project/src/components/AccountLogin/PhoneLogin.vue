@@ -29,6 +29,7 @@
 </template>
 <script>
 export default {
+    name:'PhoneLogin',
     data(){
         //自定义验证规则
         let checkPhone=(rule,value,callback)=>{

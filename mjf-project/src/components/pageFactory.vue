@@ -1,22 +1,13 @@
 <template>
-  <el-container>
-    <el-header> 
-      <p>
-        <el-button type="primary" @click="goTo('/')"> 回到首页</el-button>
-        <el-button type="primary" @click="goTo('/pageTable')"> 测试页面</el-button>
-        <el-button type="primary" @click="goTo('/table')"> table组件</el-button>
-        <el-button type="primary" @click="goTo('/myFamily')"> 去往myfamily</el-button>
-        <el-button type="primary" @click="goTo('/first')"> 去往first页面</el-button>
-      </p> 
-    </el-header>
+<div class="wrapper">
     <div class="container">
       <h3>{{msg}}</h3>
       <!-- 自定义中间部分内容 -->
       <slot>
       </slot>
     </div>
-    <el-footer>Footer</el-footer>
-  </el-container>
+    <div>Footer</div>
+</div>
 </template>
 
 <script>

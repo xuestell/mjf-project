@@ -4,18 +4,25 @@ import PageFactory from '../PageFactory';
 //全局回到顶部
 import BackToTop from '../BackToTop/BackToTop'
 //全局表格组件
-import ElFilterTable from '@/components/TableList/ElFilterTable';
+import TableInfo from '@/components/TableList/TableInfo';
 //全局普通登录组件
 const Login=()=>import ('@/components/AccountLogin/Login');
 //全局手机验证码登录组件
 const PhoneLogin=()=>import ('@/components/AccountLogin/PhoneLogin');
+const AddItem=()=> import('@/components/TableList/AddItem')
+const NavMenu=()=> import('@/components/TableList/NavMenu')
+
+
+
 
 //导入左侧导航
 import NavLeft from '@/components/MyFamily/Left'
 
 Vue.component('PageFactory',PageFactory);
 Vue.component('BackToTop',BackToTop);
-Vue.component('ElFilterTable',ElFilterTable);
+Vue.component('TableInfo',TableInfo);
 Vue.component('NavLeft',NavLeft);
 Vue.component('Login',Login);
 Vue.component('PhoneLogin',PhoneLogin);
+Vue.component('AddItem',AddItem);
+Vue.component('NavMenu',NavMenu);

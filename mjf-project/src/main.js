@@ -7,6 +7,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 //引入全局重置的样式
 import '@/assets/common.css'
+//引入全局注册组件
 import './components/GlobalComponents'
 //全局导入axios
 import axios from 'axios'
@@ -15,8 +16,7 @@ import axios from 'axios'
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
-// //全局注册组件
-// Vue.component(PageFactory.name, PageFactory);
+
 
 /* eslint-disable no-new */
 new Vue({
