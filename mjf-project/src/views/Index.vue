@@ -21,7 +21,7 @@
     },
     data () {
       return {
-        msg: 'hello,mjf',
+        msg: 'hello,mds',
         //表头数据
         columns:[],
         //数据源
