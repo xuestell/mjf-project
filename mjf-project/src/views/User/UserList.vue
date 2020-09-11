@@ -7,9 +7,16 @@
         @handleMulDel="handleMulDel"
         @edit="edit"
         ></table-info>
+        <el-dialog :visible.sync="dialogVisible" :before-close="handleClose">
+         <div class="form-wrap">
+            <h3> 编辑表数据 </h3>
+            <custom-form :formConfig="formConfig" :rules="rules" :value="value" @submit="submit" :obj="obj" @errhandle="errhandle"  @cancel="cancel"></custom-form>
+        </div>
+        </el-dialog>
     </div>
 </template>
 <script>
+import {editItem,value} from './config'
 import { headColumns } from './config'
 import {handle} from './mixins/handleData'
 export default {
@@ -17,12 +24,22 @@ export default {
     mixins:[handle],
     data(){
         return {
+            dialogVisible:false,
             //表头数据
             columns:headColumns,
             //数据源
             tableData: [],
             url:'static/table/table.json',
-            headUrl:  'static/table/table-head.json',
+            headUrl: 'static/table/table-head.json',
+            //编辑
+            formConfig:editItem,
+            value:value,
+            obj:{
+            save:'保存',
+            cancel:'取消'
+            },
+            rules:{}
+            
         }
     },
     mounted(){
@@ -87,14 +104,43 @@ export default {
 
         },
         edit(val){
+            this.dialogVisible=true;
+            this.value=val;
             let obj=JSON.stringify(val);
             //localStorage.setItem('obj',JSON.stringify(obj));
-            this.$router.push({
-                path:'/editUser',
-                  query:{
-                    res:obj,
-                }
-            });
+            // this.$router.push({
+            //     path:'/editUser',
+            //       query:{
+            //         res:obj,
+            //     }
+            // });
+        },
+         submit(obj){
+            const editTableData=JSON.parse(JSON.stringify(this.tableData));
+            let idx=editTableData.findIndex((item)=>{
+            console.log(item[this.getParam()],this.value[this.getParam()])
+            return item[this.getParam()]==this.value[this.getParam()]
+        })
+        editTableData[idx]=this.value;
+        localStorage.setItem('arr',JSON.stringify(editTableData));
+        this.$message.success("信息修改成功");
+        this.dialogVisible=false;
+        },
+
+        errhandle(){
+        this.$message.error('请检查表单')
+        },
+
+        cancel(){
+        this.dialogVisible=false;
+        },
+        handleClose(done){
+            this.$confirm('确定关闭么').then(()=>{
+                done();
+            }).catch((err)=>{
+                console.log(err);
+            })
+
         },
             //表头
             async getTableHead(url){

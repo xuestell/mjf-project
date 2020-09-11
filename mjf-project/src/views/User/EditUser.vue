@@ -1,7 +1,6 @@
 <template>
       <div class="form-wrap">
         <h3> 编辑表数据 </h3>
-      <!--  新增表格数据 -->
         <custom-form :formConfig="formConfig" :rules="rules" :value="value" @submit="submit" :obj="obj" @errhandle="errhandle"  @cancel="cancel"></custom-form>
       </div>
 </template>
