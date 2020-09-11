@@ -1,6 +1,6 @@
 <template>
       <div>
-        <h3> 新增{{title}} </h3>
+        <h3> 新增表{{title}}数据 </h3>
    <!--  新增表格数据 -->
       <add-item  :rule-form="ruleForm" @submit="submit" ></add-item>
       </div>
@@ -20,13 +20,13 @@
     computed:{
      ruleForm(){
        return JSON.parse(decodeURIComponent(this.$route.query.obj));
-
      },
      title(){
        return this.$route.query.title;
-     }
+     },
     },
     mounted(){
+       console.log(this.ruleForm);
 
     },
     methods:{
@@ -38,10 +38,6 @@
 }
 </script>
 <style scoped>
-.add-table-item{
-  width:500px;
-  margin: 0 auto;
-}
 
 </style>
 

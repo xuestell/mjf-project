@@ -63,10 +63,11 @@ export default {
     justify-content: space-between;
     //换行
     flex-wrap: wrap;
+    flex-direction: row;
 
     li{
         list-style: none;
-        width:240px;
+        width:235px;
         margin-right: 10px;
      
         p{

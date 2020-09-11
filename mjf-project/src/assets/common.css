@@ -2,3 +2,25 @@
     margin:0;
     padding:0;
 }
+.header,.bottom{
+    padding:20px;
+}
+.main{
+    margin:30px 30px 30px 0px;
+}
+.el-table th{
+    background: #e4e4e4;
+    color:#333;
+}
+table{
+    width: auto;
+}
+.el-table--border,tr,th,td{
+    border:1px solid #e8e8e8;
+}
+
+.form-wrap .align-left{
+    text-align: left;
+}
+
+

@@ -8,7 +8,7 @@
       <slot>
       <table-info  :table-data="tableData" :columns="columns"></table-info>
       </slot>
-      <!-- <router-view></router-view> -->
+      <router-view></router-view>
       <!-- 新增表格数据 -->
       <!-- <add-item  :rule-form="ruleForm" @submit="submit" ></add-item> -->
     </div>
